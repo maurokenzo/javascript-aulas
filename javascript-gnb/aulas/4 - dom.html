@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-bren">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(57, 55, 184);
+            color: white;
+            font: normal 18pt Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos de DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <P>Aprendendo a usar <strong>DOM</strong> com JavaScript</P>
+    <div class="msg">Clique em mim</div>
+    <script>
+        // Entendendo DOM
+        //window.document.write(window.navigator.appName);
+        //window.document.write(window.document.URL);
+
+        //var corpo = window.document.body;
+        //corpo.style.background = "black"
+        
+        //var p1 = window.document.getElementsByTagName('p') [1];
+        //p1.style.color = "yellow";
+        //window.document.write("Está escrito assim: " + p1.innerText);
+        //window.document.write("Está escrito assim: " + p1.innerHTML);
+        
+        //var c = window.document.getElementById('msg');
+        //c.style.background = 'green';
+        //c.innerText = 'Estou aguardando';
+        
+        var d = window.document.querySelector('div.msg'); // 
+        // quando for tag (#), quando for classe ())
+        d.style.color = 'red';
+        d.style.background = 'cyan';
+        
+    </script>
+</body>
+</html>

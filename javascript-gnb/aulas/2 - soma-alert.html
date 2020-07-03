@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> <!-- metadados, charset, title, CSS, JS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style> /* bloco CSS */
+        body {
+            background-color: rgb(99, 154, 199);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: rgb(134, 236, 180);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script> // bloco JavaScript 
+        var n1 = Number(window.prompt("Digite um número: ")); //necessário converter para número Number.parseInt()
+        var n2 = Number(window.prompt("Digite outro número: ")); //pois prompt retorna string 
+        var s = n1 + n2;
+        //number.parseIni() para inteiro
+        //number.parseFloat() para real
+        //number o JS resolve tanto int como float
+        //String(n) ou n.toString() para converter para string
+        //window.alert("A soma é " + String(s)); //neste exemplo não é necessário pois ja foi convertido para Number
+        window.alert(`À soma entre ${n1} e ${n2} é ${s}`); //usando template string
+    </script>
+</body>
+</html>

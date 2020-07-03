@@ -1,0 +1,229 @@
+        
+<!-- comentário HTML-->
+/* comentário CSS */
+// comentário JavaScript 
+
+TIPOS PRIMITIVOS E TRATAMENTO DE DADOS        
+number.parseIni() para inteiro
+number.parseFloat() para real
+number o JS resolve tanto int como float
+String(n) ou n.toString() para converter para string
+window.alert(`À soma entre ${n1} e ${n2} é ${s}`); //usando template string (crase) - ${} PLACE HOLDERS
+
+var nome = window.prompt("Qual é seu nome? ");
+document.write(`Olá <strong>${nome}</strong>. Seu nome tem ${nome.length} letras<br>`);
+document.write(`Seu nome em maiúsculo é ${nome.toUpperCase()}.`);
+//<strong>${nome}</strong> negrito
+//<br> quebra linha
+//nome.length retorna tamanho de nome
+//nome.toUpperCase() converte para maiúsculo
+
+LOCALE no node
+1323.3
+> n1.toFixed(2)
+'1323.30'
+> n1
+1323.3
+> n1.toFixed(2).replace('.',',')
+'1323,30'
+> n1.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+'R$ 1,323.30'
+> n1.toLocaleString('pt-br', {style: 'currency', currency: 'USD'})
+'US$ 1,323.30'
+> n1.toLocaleString('pt-br', {style: 'currency', currency: 'EUR'})
+'€ 1,323.30'
+
+        var numero = Number(window.prompt("Digite um número"));
+        document.write(`<br>Formatado para reais: ${numero.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`);
+        document.write(`<br>Formatado para dolar: ${numero.toLocaleString('en', {style: 'currency', currency: 'USD'})}`);
+        document.write(`<br>Formatado para euro: ${numero.toLocaleString('de', {style: 'currency', currency: 'EUR'})}`);
+        document.write(`<br>Formatado para yene: ${numero.toLocaleString('ja', {style: 'currency', currency: 'JPY'})}`);
+
+
+OPERADORES ARITMÉTICOS + - () * / ** %
+
+var n = 3
+n = n + 4    n += 4
+n = n - 2    n -= 2
+n = n * 2    n *= 2
+n = n / 2    n /= 2
+n = n ** 2    n **= 2 (n elevado a 2) 
+n = n % 2    n %= 2 (resto da divisão de n por 2)
+
+> n = 10
+10
+> n ++ (exibe n e incrementa 1)
+10
+> n (exibe n)
+11
+> ++ n (incremente 1 e exibe n)
+12
+> 
+
+OPERADORES RELACIONAIS < > <= !== ===
+
+> x = 2
+2
+> y = '2'
+'2'
+> typeof x
+'number'
+> typeof y
+'string'
+> x == y (x tem mesmo valor de y)
+true
+> x === y (x tem mesmo valor e tipo que y)
+false
+> 
+> x != y (x não tem mesmo valor que y)
+false
+> x !== y (x não tem mesmo valor e tipo que y - desigual restrito)
+true
+> 
+
+OPERADORES L[OGICOS
+
+! negação - NÃO (UNÁRIO) 
+$$ conjunção - E (BINÁRIO sendo os 2 verdadeiros)
+|| disjunção - OU (BINÁRIO sendo um verdadeiro)
+
+> a = 5
+5
+> b = 8
+8
+> true && false
+false
+> true && true
+true
+> false || false
+false
+> true || false
+true
+> true || true
+true
+> a > b && b % 2 == 0
+false
+> a <= b || 2 == 2
+true
+> ! true
+false
+> ! false
+true
+> 
+
+PRECEDÊNCIA
+() ** / * + - (aritméticos) 
+> < >= == === != !=== (relacionais)
+! (lógicos)
+&&
+||
+ternário
+
+OPERADOR TERNÁRO
+teste lógico ? true : false
+
+> media = 5.5
+5.5
+> media > 7 ? "aprovado" : "reprovado"
+'reprovado'
+> media += 3
+8.5
+> media > 7 ? "aprovado" : "reprovado"
+'aprovado'
+
+> var x = 8
+undefined
+> var res = x % 2 == 0 ? 5 : 9
+undefined
+> x
+8
+> res
+5
+
+> var idade = 19
+undefined
+> var r = idade >= 18 ? "maior" : "menor"
+undefined
+> r
+'maior'
+> 
+
+CINDICIONAL
+var idade = 206;
+if (idade < 16) {
+    console.log("não vota")
+} else if (idade < 18 || idade > 65) {
+    console.log("voto opcional")
+} else  {
+    console.log("voto obrigatório")
+}
+
+/*
+var idade = 206;
+if (idade < 16) {
+    console.log("não vota");
+} else if (idade < 18 || idade > 65) {
+    console.log("voto opcional");
+} else  {
+    console.log("voto obrigatório");
+}
+*/
+
+var agora = new Date();
+var hora = agora.getHours();
+//var hora = 2;
+console.log(`Agora são ${hora} horas`)
+if (hora < 6) {
+    console.log("boa madrigada")
+} else if (hora < 12) {
+    console.log('Bom dia');
+} else if (hora < 18) {
+    console.log('Boa tarde');
+} else {
+    console.log("boa noite")
+}
+
+CONDIÇÃO MULTIPLA
+dentrO de cada bloco BREAK
+
+var agora = new Date();
+var diaSem = agora.getDay();
+/*
+0 - domino
+1 - segunda
+2 - terça
+3 - querta
+4 - quinta 
+5 - sexta
+6 - sábado
+*/
+console.log(diaSem);
+
+switch(diaSem) {
+    case 0:
+        console.log("domingo");
+        break;
+    case 1:
+        console.log("segunda");
+        break;
+    case 2: 
+        console.log("terça");
+        break;
+    case 3:
+        console.log("quarta");
+        break;
+    case 4:
+        console.log("quinta");
+        break;
+    case 5:
+        console.log("sexta");
+        break;
+    case 6:
+        console.log("sábado");
+        break;
+    default:
+        console.log("[ERRO] dia inválido");
+        break;
+}
+
+
